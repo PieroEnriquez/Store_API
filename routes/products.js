@@ -1,11 +1,11 @@
 //Importing Express and setting up the router
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-const {getAllTasks,createTask,getTask,updateTask,deleteTask} = require('../controllers/tasks');
+const {getAllProducts,getAllProductsStatic} = require('../controllers/products')
 
 
-router.route('/').get(getAllTasks).post(createTask);
-router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask);
+router.route('/').get(getAllProducts)
+router.route('/static').get(getAllProductsStatic)
 
-module.exports = router;
+module.exports = router
